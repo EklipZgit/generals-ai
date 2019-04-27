@@ -79,6 +79,8 @@ def start_game(region, userid, username, mode, gameid):
                 city[y, x] = True
             else:
                 numcities1 += 1
+            if (y, x) in gens2:
+                gens2.discard((y, x))
         empty = (tg == EMPTY) & ~city
         obstacle = (tg == MOUNTAIN) | (tg == OBSTACLE)
 
